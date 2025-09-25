@@ -1,1 +1,1 @@
-# druckapplication-fuer-energieausweise
+# Druckapplikation-für-Energieausweise

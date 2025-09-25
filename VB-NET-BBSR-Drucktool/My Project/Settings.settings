@@ -1,0 +1,30 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="PDF_Key" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Creator" Type="System.String" Scope="User">
+      <Value Profile="(Default)">BBSR Druckapplikation 2025</Value>
+    </Setting>
+    <Setting Name="Subject" Type="System.String" Scope="User">
+      <Value Profile="(Default)">BBSR Druckapplikation 2025</Value>
+    </Setting>
+    <Setting Name="Title" Type="System.String" Scope="User">
+      <Value Profile="(Default)">BBSR Druckapplikation 2025</Value>
+    </Setting>
+    <Setting Name="Author" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Bundesamt für Bauwesen und Raumordnung</Value>
+    </Setting>
+    <Setting Name="Producer" Type="System.String" Scope="User">
+      <Value Profile="(Default)">BBSR Druckapplikation 2025</Value>
+    </Setting>
+    <Setting Name="Keywords" Type="System.String" Scope="User">
+      <Value Profile="(Default)">BBSR, Energieausweis, Druckapplikation, GEG, EnEV</Value>
+    </Setting>
+    <Setting Name="Passwort" Type="System.String" Scope="User">
+      <Value Profile="(Default)">BBSR Druckapplikation 2025</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

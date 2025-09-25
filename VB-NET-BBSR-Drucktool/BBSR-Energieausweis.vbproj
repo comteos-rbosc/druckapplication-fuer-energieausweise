@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{551EB192-5395-4619-94E7-D610204A9729}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>BBSR_Energieausweis</RootNamespace>
+    <AssemblyName>Druckapplikation2025</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Empty</MyType>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42030,42032,42036,42104,42105,42106,42107,42108,42109</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42030,42032,42036,42104,42105,42106,42107,42108,42109</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>Off</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>BBSR_Energieausweis.Modul_Start</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42030,42032,42036,42104,42105,42106,42107,42108,42109</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <Optimize>true</Optimize>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42030,42032,42036,42104,42105,42106,42107,42108,42109</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42030,42032,42036,42104,42105,42106,42107,42108,42109</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <Optimize>true</Optimize>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42030,42032,42036,42104,42105,42106,42107,42108,42109</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\DataSources\System.Xml.XmlElement.datasource" />
+    <None Include="bin\x64\Release\Image\EnEV2016.resources" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Fenster\Fenster_Start.resx">
+      <DependentUpon>Fenster_Start.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Module\Modul_Ablauf_ohne_Oberflaeche.vb" />
+    <Compile Include="Module\Modul_Ablauf_Funktionen.vb" />
+    <Compile Include="Module\Modul_Berechnungen.vb" />
+    <Compile Include="Module\Modul_Fehlerbehandlung.vb" />
+    <Compile Include="Module\Modul_HTML.vb" />
+    <Compile Include="Module\Modul_Start.vb" />
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Fenster\Fenster_Start.Designer.vb">
+      <DependentUpon>Fenster_Start.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Fenster\Fenster_Start.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Klassen-Energieausweis\2016\Klasse_Energieausweis_NWB_2016.vb" />
+    <Compile Include="Klassen-Energieausweis\2016\Klasse_Energieausweis_WB_2016.vb" />
+    <Compile Include="Klassen-Energieausweis\2020\Klasse_Energieausweis_NWB_2020.vb" />
+    <Compile Include="Klassen-Energieausweis\2020\Klasse_Energieausweis_WB_2020.vb" />
+    <Compile Include="Klassen-Energieausweis\2023\Klasse_Energieausweis_NWB_2023.vb" />
+    <Compile Include="Klassen-Energieausweis\2023\Klasse_Energieausweis_WB_2023.vb" />
+    <Compile Include="Klassen-Energieausweis\2024\Klasse_Energieausweis_NWB_2024.vb" />
+    <Compile Include="Klassen-Energieausweis\2024\Klasse_Energieausweis_WB_2024.vb" />
+    <Compile Include="Module\Modul_PDF.vb" />
+    <Compile Include="Module\Modul_Image.vb" />
+    <Compile Include="Module\Modul_Variablen.vb" />
+    <Compile Include="Module\Modul_Webdienst.vb" />
+    <Compile Include="Module\Modul_XML.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My\Application.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 und x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\Image\" />
+    <Folder Include="Klassen-Energieausweis\20xx\" />
+    <Folder Include="Projektdateien\" />
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Settings.settings">
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="bin\x64\Release\Image\pfeil_hoch.png" />
+    <None Include="bin\x64\Release\Image\pfeil_runter.png" />
+    <None Include="bin\x64\Release\Image\GEG2023_WB_Seite_1.png" />
+    <None Include="bin\x64\Release\Image\GEG2023_WB_Seite_2.png" />
+    <None Include="bin\x64\Release\Image\GEG2023_WB_Seite_3.png" />
+    <None Include="bin\x64\Release\Image\GEG2023_WB_Seite_4.png" />
+    <None Include="bin\x64\Release\Image\GEG2023_WB_Seite_5.png" />
+    <None Include="bin\x64\Release\Image\ENEV2016_NWB_Bedarf_Aushang.png" />
+    <None Include="bin\x64\Release\Image\ENEV2016_NWB_Seite_1.png" />
+    <None Include="bin\x64\Release\Image\ENEV2016_NWB_Seite_2.png" />
+    <None Include="bin\x64\Release\Image\ENEV2016_NWB_Seite_3.png" />
+    <None Include="bin\x64\Release\Image\ENEV2016_NWB_Seite_4.png" />
+    <None Include="bin\x64\Release\Image\ENEV2016_NWB_Seite_5.png" />
+    <None Include="bin\x64\Release\Image\ENEV2016_NWB_Ueberlauf_Bedarf.png" />
+    <None Include="bin\x64\Release\Image\ENEV2016_NWB_Ueberlauf_Gebaeudenutzung.png" />
+    <None Include="bin\x64\Release\Image\ENEV2016_NWB_Ueberlauf_Gebaeudezonen.png" />
+    <None Include="bin\x64\Release\Image\ENEV2016_NWB_Ueberlauf_Modernisierung.png" />
+    <None Include="bin\x64\Release\Image\ENEV2016_NWB_Ueberlauf_Verbrauch.png" />
+    <None Include="bin\x64\Release\Image\ENEV2016_NWB_Verbrauch_Aushang.png" />
+    <None Include="bin\x64\Release\Image\ENEV2016_WB_Seite_1.png" />
+    <None Include="bin\x64\Release\Image\ENEV2016_WB_Seite_2.png" />
+    <None Include="bin\x64\Release\Image\ENEV2016_WB_Seite_3.png" />
+    <None Include="bin\x64\Release\Image\ENEV2016_WB_Seite_4.png" />
+    <None Include="bin\x64\Release\Image\ENEV2016_WB_Seite_5.png" />
+    <None Include="bin\x64\Release\Image\ENEV2016_WB_Ueberlauf_Modernisierung.png" />
+    <None Include="bin\x64\Release\Image\ENEV2016_WB_Ueberlauf_Verbrauch.png" />
+    <None Include="bin\x64\Release\Image\GEG2020_NWB_Bedarf_Aushang.png" />
+    <None Include="bin\x64\Release\Image\GEG2020_NWB_Seite_1.png" />
+    <None Include="bin\x64\Release\Image\GEG2020_NWB_Seite_2.png" />
+    <None Include="bin\x64\Release\Image\GEG2020_NWB_Seite_3.png" />
+    <None Include="bin\x64\Release\Image\GEG2020_NWB_Seite_4.png" />
+    <None Include="bin\x64\Release\Image\GEG2020_NWB_Seite_5.png" />
+    <None Include="bin\x64\Release\Image\GEG2020_NWB_Ueberlauf_Bedarf.png" />
+    <None Include="bin\x64\Release\Image\GEG2020_NWB_Ueberlauf_Gebaeudenutzung.png" />
+    <None Include="bin\x64\Release\Image\GEG2020_NWB_Ueberlauf_Gebaeudezonen.png" />
+    <None Include="bin\x64\Release\Image\GEG2020_NWB_Ueberlauf_Modernisierung.png" />
+    <None Include="bin\x64\Release\Image\GEG2020_NWB_Ueberlauf_Verbrauch.png" />
+    <None Include="bin\x64\Release\Image\GEG2020_NWB_Verbrauch_Aushang.png" />
+    <None Include="bin\x64\Release\Image\GEG2020_WB_Seite_1.png" />
+    <None Include="bin\x64\Release\Image\GEG2020_WB_Seite_2.png" />
+    <None Include="bin\x64\Release\Image\GEG2020_WB_Seite_3.png" />
+    <None Include="bin\x64\Release\Image\GEG2020_WB_Seite_4.png" />
+    <None Include="bin\x64\Release\Image\GEG2020_WB_Seite_5.png" />
+    <None Include="bin\x64\Release\Image\GEG2020_WB_Ueberlauf_Modernisierung.png" />
+    <None Include="bin\x64\Release\Image\GEG2020_WB_Ueberlauf_Verbrauch.png" />
+    <None Include="bin\x64\Release\Image\GEG2023_NWB_Seite_1.png" />
+    <None Include="bin\x64\Release\Image\GEG2023_NWB_Seite_2.png" />
+    <None Include="bin\x64\Release\Image\GEG2023_NWB_Seite_3.png" />
+    <None Include="bin\x64\Release\Image\GEG2023_NWB_Seite_4.png" />
+    <None Include="bin\x64\Release\Image\GEG2023_NWB_Seite_5.png" />
+    <None Include="bin\x64\Release\Image\GEG2023_NWB_Ueberlauf_Bedarf.png" />
+    <None Include="bin\x64\Release\Image\GEG2023_NWB_Ueberlauf_Gebaeudenutzung.png" />
+    <None Include="bin\x64\Release\Image\GEG2023_NWB_Ueberlauf_Gebaeudezonen.png" />
+    <None Include="bin\x64\Release\Image\GEG2023_NWB_Ueberlauf_Modernisierung.png" />
+    <None Include="bin\x64\Release\Image\GEG2023_NWB_Ueberlauf_Verbrauch.png" />
+    <None Include="bin\x64\Release\Image\GEG2023_NWB_Verbrauch_Aushang.png" />
+    <None Include="bin\x64\Release\Image\GEG2023_WB_Ueberlauf_Modernisierung.png" />
+    <None Include="bin\x64\Release\Image\GEG2023_WB_Ueberlauf_Verbrauch.png" />
+    <None Include="bin\x64\Release\Image\GEG2024_NWB_Bedarf_Aushang.png" />
+    <None Include="bin\x64\Release\Image\GEG2024_NWB_Seite_1.png" />
+    <None Include="bin\x64\Release\Image\GEG2024_NWB_Seite_2.png" />
+    <None Include="bin\x64\Release\Image\GEG2024_NWB_Seite_3.png" />
+    <None Include="bin\x64\Release\Image\GEG2024_NWB_Seite_4.png" />
+    <None Include="bin\x64\Release\Image\GEG2024_NWB_Seite_5.png" />
+    <None Include="bin\x64\Release\Image\GEG2024_NWB_Ueberlauf_Bedarf.png" />
+    <None Include="bin\x64\Release\Image\GEG2024_NWB_Ueberlauf_Erneuerbare_Energien_1.png" />
+    <None Include="bin\x64\Release\Image\GEG2024_NWB_Ueberlauf_Erneuerbare_Energien_2.png" />
+    <None Include="bin\x64\Release\Image\GEG2024_NWB_Ueberlauf_Gebaeudenutzung.png" />
+    <None Include="bin\x64\Release\Image\GEG2024_NWB_Ueberlauf_Gebaeudezonen.png" />
+    <None Include="bin\x64\Release\Image\GEG2024_NWB_Ueberlauf_Modernisierung.png" />
+    <None Include="bin\x64\Release\Image\GEG2024_NWB_Ueberlauf_Verbrauch.png" />
+    <None Include="bin\x64\Release\Image\GEG2024_NWB_Verbrauch_Aushang.png" />
+    <None Include="bin\x64\Release\Image\GEG2024_WB_Seite_1.png" />
+    <None Include="bin\x64\Release\Image\GEG2024_WB_Seite_2.png" />
+    <None Include="bin\x64\Release\Image\GEG2024_WB_Seite_3.png" />
+    <None Include="bin\x64\Release\Image\GEG2024_WB_Seite_4.png" />
+    <None Include="bin\x64\Release\Image\GEG2024_WB_Seite_5.png" />
+    <None Include="bin\x64\Release\Image\GEG2024_WB_Ueberlauf_Erneuerbare_Energien_1.png" />
+    <None Include="bin\x64\Release\Image\GEG2024_WB_Ueberlauf_Erneuerbare_Energien_2.png" />
+    <None Include="bin\x64\Release\Image\GEG2024_WB_Ueberlauf_Modernisierung.png" />
+    <None Include="bin\x64\Release\Image\GEG2024_WB_Ueberlauf_Verbrauch.png" />
+    <None Include="bin\x64\Release\Image\GEG2023_NWB_Bedarf_Aushang.png" />
+    <None Include="bin\x64\Release\Image\GEG2024_NWB_Ueberlauf_Erneuerbare_Energien_1_1.png" />
+    <None Include="bin\x64\Release\Image\GEG2024_NWB_Ueberlauf_Erneuerbare_Energien_1_2.png" />
+    <None Include="bin\x64\Release\Image\GEG2024_NWB_Ueberlauf_Erneuerbare_Energien_2_1.png" />
+    <None Include="bin\x64\Release\Image\GEG2024_NWB_Ueberlauf_Erneuerbare_Energien_2_2.png" />
+    <None Include="bin\x64\Release\Image\GEG2024_WB_Ueberlauf_Erneuerbare_Energien_1_1.png" />
+    <None Include="bin\x64\Release\Image\GEG2024_WB_Ueberlauf_Erneuerbare_Energien_1_2.png" />
+    <None Include="bin\x64\Release\Image\GEG2024_WB_Ueberlauf_Erneuerbare_Energien_2_1.png" />
+    <None Include="bin\x64\Release\Image\GEG2024_WB_Ueberlauf_Erneuerbare_Energien_2_2.png" />
+    <None Include="Anleitung\Druckapplikation-2025.png" />
+    <None Include="Anleitung\Druckapplikation-2025-Beta.png" />
+    <Content Include="Icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VB-NET-BBSR-Webservice\BBSR-Webservice\BBSR-Webservice.vbproj">
+      <Project>{76edd538-3425-4115-92ff-ec662904e371}</Project>
+      <Name>BBSR-Webservice</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
