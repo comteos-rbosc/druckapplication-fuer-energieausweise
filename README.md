@@ -35,8 +35,8 @@ Die Druckapplikation spielt eine zentrale Rolle in der Kommunikation mit dem **W
 - Dieses **XML-Schema** dient auch als **Kommunikationsschnittstelle** zwischen kommerzieller Berechnungssoftware und der Druckapplikation, wenn die Energieausweise im Verbund erstellt werden.
 
 ## Technische Informationen
-Das Handbuch finden Sie unter dem nachfolgenden Link: [Handbuch](BBSR-Druckapplikation - Handbuch.pdf)
-Die Dokumentation finden sie unter dem nachfolgenden Link: [Dokumentation](BBSR Druckapplikation - Dokumentation.pdf)
+Das Handbuch finden Sie unter dem nachfolgenden Link: [Handbuch](BBSR-Druckapplikation_Handbuch.pdf)  
+Die Dokumentation finden sie unter dem nachfolgenden Link: [Dokumentation](BBSR-Druckapplikation_Dokumentation.pdf)
 
 ## Mitmachen und Entwicklung
 Wir freuen uns über jeden Beitrag zur Weiterentwicklung, Fehlerbehebung und Optimierung dieser Anwendung!
