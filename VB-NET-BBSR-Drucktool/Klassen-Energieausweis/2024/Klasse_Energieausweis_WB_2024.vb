@@ -265,7 +265,12 @@ Public Class Klasse_Energieausweis_WB_2024
                                 '-------------------------------------------------------
                                 'Erneuerbare Energien ----------------------------------
                                 '-------------------------------------------------------
-                                If .Energieausweis_Daten.Nutzung_zur_Erfuellung_von_EE_neue_Anlage.Wert = True Then
+                                If .Energieausweis_Daten.Wohngebaeude.Bedarfswerte_18599.Anteil_an_Waermeenergiebedarf_Berechnung.Wert = True Then 'If .Energieausweis_Daten.Nutzung_zur_Erfuellung_von_EE_neue_Anlage.Wert = True Then
+                                    '-------------------------------------------------------
+                                    Image_Auswahl_schreiben(Grafik_Seite, .Energieausweis_Daten.Nutzung_zur_Erfuellung_von_EE_neue_Anlage.Wert, 280, 319, 3547, 3589)
+                                    '-------------------------------------------------------
+                                    Image_Auswahl_schreiben(Grafik_Seite, .Energieausweis_Daten.EE_Angabe_Heizung.Wert, 1228, 1273, 3468, 3514)
+                                    Image_Auswahl_schreiben(Grafik_Seite, .Energieausweis_Daten.EE_Angabe_Warmwasser.Wert, 1603, 1650, 3468, 3514)
                                     '-------------------------------------------------------
                                     Select Case .Energieausweis_Daten.Keine_Pauschale_Erfuellungsoptionen_Anlagentyp.Wert
                                         Case True
@@ -284,11 +289,6 @@ Public Class Klasse_Energieausweis_WB_2024
                                             '-------------------------------------------------------
                                         Case Else
                                             '-------------------------------------------------------
-                                            Image_Auswahl_schreiben(Grafik_Seite, .Energieausweis_Daten.Nutzung_zur_Erfuellung_von_EE_neue_Anlage.Wert, 280, 319, 3547, 3589)
-                                            '-------------------------------------------------------
-                                            Image_Auswahl_schreiben(Grafik_Seite, .Energieausweis_Daten.EE_Angabe_Heizung.Wert, 1228, 1273, 3468, 3514)
-                                            Image_Auswahl_schreiben(Grafik_Seite, .Energieausweis_Daten.EE_Angabe_Warmwasser.Wert, 1603, 1650, 3468, 3514)
-                                            '-------------------------------------------------------
                                             Image_Auswahl_schreiben(Grafik_Seite, True, 360, 399, 3693, 3734)
                                             Image_Auswahl_schreiben(Grafik_Seite, False, 349, 389, 4312, 4354)
                                             '-------------------------------------------------------
@@ -305,202 +305,77 @@ Public Class Klasse_Energieausweis_WB_2024
                                     '-------------------------------------------------------
                                 End If
                                 '-------------------------------------------------------
-                                If .Energieausweis_Daten.Keine_Pauschale_Erfuellungsoptionen_Anlagentyp.Wert = False Then
+                                '-------------------------------------------------------
+                                Image_Auswahl_schreiben(Grafik_Seite, .Energieausweis_Daten.Nutzung_bei_Bestandsanlagen.Wert, 280, 319, 4838, 4880)
+                                '-------------------------------------------------------
+                                'Tabelle Erneuerbare-Energien-65EE-Regel ---------------
+                                '-------------------------------------------------------
+                                .Erneuerbare_Energien_65EE_Regel_Anzahl = Anzahl_Erneuerbare_Energien_65EE_Regel()
+                                ''-------------------------------------------------------
+                                Zeilenzahl = 2
+                                Zeilenhoehe = 90
+                                '-------------------------------------------------------
+                                If .Erneuerbare_Energien_65EE_Regel_Anzahl < 2 Then
+                                    Zeilenzahl = .Erneuerbare_Energien_65EE_Regel_Anzahl
+                                End If
+                                '-------------------------------------------------------
+                                For Anzahl_Zeilen = 1 To Zeilenzahl
                                     '-------------------------------------------------------
-                                    Image_Auswahl_schreiben(Grafik_Seite, .Energieausweis_Daten.Nutzung_bei_Bestandsanlagen.Wert, 280, 319, 4838, 4880)
+                                    Image_Text_schreiben(Grafik_Seite, Ausrichtung.EinzeiligLinks, .EE_65EE_Regel(Anzahl_Zeilen).Art_der_Nutzung_erneuerbaren_Energie.Wert, 281, 1297, 4540 + (Zeilenhoehe * (Anzahl_Zeilen - 1)), 4540 + (Zeilenhoehe * Anzahl_Zeilen), Font_Schriftgroesse_40, Font_Druckfarbe)
                                     '-------------------------------------------------------
-                                    'Tabelle Erneuerbare-Energien-65EE-Regel ---------------
-                                    '-------------------------------------------------------
-                                    .Erneuerbare_Energien_65EE_Regel_Anzahl = Anzahl_Erneuerbare_Energien_65EE_Regel()
-                                    ''-------------------------------------------------------
-                                    Zeilenzahl = 2
-                                    Zeilenhoehe = 90
-                                    '-------------------------------------------------------
-                                    If .Erneuerbare_Energien_65EE_Regel_Anzahl < 2 Then
-                                        Zeilenzahl = .Erneuerbare_Energien_65EE_Regel_Anzahl
+                                    If .EE_65EE_Regel(Anzahl_Zeilen).Deckungsanteil.Wert <> 0 Then
+                                        Image_Zahl_schreiben(Grafik_Seite, Ausrichtung.EinzeiligMitte, .EE_65EE_Regel(Anzahl_Zeilen).Deckungsanteil.Wert, 0, "", 1316, 1460, 4540 + (Zeilenhoehe * (Anzahl_Zeilen - 1)), 4540 + (Zeilenhoehe * Anzahl_Zeilen), Font_Schriftgroesse_40, Font_Druckfarbe)
                                     End If
                                     '-------------------------------------------------------
-                                    For Anzahl_Zeilen = 1 To Zeilenzahl
-                                        '-------------------------------------------------------
-                                        Image_Text_schreiben(Grafik_Seite, Ausrichtung.EinzeiligLinks, .EE_65EE_Regel(Anzahl_Zeilen).Art_der_Nutzung_erneuerbaren_Energie.Wert, 281, 1297, 4540 + (Zeilenhoehe * (Anzahl_Zeilen - 1)), 4540 + (Zeilenhoehe * Anzahl_Zeilen), Font_Schriftgroesse_40, Font_Druckfarbe)
-                                        '-------------------------------------------------------
-                                        If .EE_65EE_Regel(Anzahl_Zeilen).Deckungsanteil.Wert <> 0 Then
-                                            Image_Zahl_schreiben(Grafik_Seite, Ausrichtung.EinzeiligMitte, .EE_65EE_Regel(Anzahl_Zeilen).Deckungsanteil.Wert, 0, "", 1316, 1460, 4540 + (Zeilenhoehe * (Anzahl_Zeilen - 1)), 4540 + (Zeilenhoehe * Anzahl_Zeilen), Font_Schriftgroesse_40, Font_Druckfarbe)
-                                        End If
-                                        '-------------------------------------------------------
-                                        If .EE_65EE_Regel(Anzahl_Zeilen).Anteil_der_Pflichterfuellung_Anlage.Wert <> 0 Then
-                                            Image_Zahl_schreiben(Grafik_Seite, Ausrichtung.EinzeiligMitte, .EE_65EE_Regel(Anzahl_Zeilen).Anteil_der_Pflichterfuellung_Anlage.Wert, 0, "", 1577, 1735, 4540 + (Zeilenhoehe * (Anzahl_Zeilen - 1)), 4540 + (Zeilenhoehe * Anzahl_Zeilen), Font_Schriftgroesse_40, Font_Druckfarbe)
-                                        End If
-                                        '-------------------------------------------------------
-                                        If .EE_65EE_Regel(Anzahl_Zeilen).Anteil_der_Pflichterfuellung_Gesamt.Wert <> 0 Then
-                                            Image_Zahl_schreiben(Grafik_Seite, Ausrichtung.EinzeiligMitte, .EE_65EE_Regel(Anzahl_Zeilen).Anteil_der_Pflichterfuellung_Gesamt.Wert, 0, "", 1837, 1998, 4540 + (Zeilenhoehe * (Anzahl_Zeilen - 1)), 4540 + (Zeilenhoehe * Anzahl_Zeilen), Font_Schriftgroesse_40, Font_Druckfarbe)
-                                        End If
-                                        '-------------------------------------------------------
-                                    Next
-                                    '-------------------------------------------------------
-                                    If Gesamtsumme_Erneuerbare_Energien_65EE_Regel() <> 0 Then
-                                        Image_Zahl_schreiben(Grafik_Seite, Ausrichtung.EinzeiligMitte, Gesamtsumme_Erneuerbare_Energien_65EE_Regel(), 0, "", 1837, 1998, 4727, 4797, Font_Schriftgroesse_40, Font_Druckfarbe)
+                                    If .EE_65EE_Regel(Anzahl_Zeilen).Anteil_der_Pflichterfuellung_Anlage.Wert <> 0 Then
+                                        Image_Zahl_schreiben(Grafik_Seite, Ausrichtung.EinzeiligMitte, .EE_65EE_Regel(Anzahl_Zeilen).Anteil_der_Pflichterfuellung_Anlage.Wert, 0, "", 1577, 1735, 4540 + (Zeilenhoehe * (Anzahl_Zeilen - 1)), 4540 + (Zeilenhoehe * Anzahl_Zeilen), Font_Schriftgroesse_40, Font_Druckfarbe)
                                     End If
                                     '-------------------------------------------------------
-                                    'Tabelle Erneuerbare-Energien-65EE-keine-Regel ---------
-                                    '-------------------------------------------------------
-                                    .Erneuerbare_Energien_65EE_keine_Regel_Anzahl = Anzahl_Erneuerbare_Energien_65EE_keine_Regel()
-                                    ''-------------------------------------------------------
-                                    Zeilenzahl = 2
-                                    Zeilenhoehe = 93
-                                    '-------------------------------------------------------
-                                    If .Erneuerbare_Energien_65EE_keine_Regel_Anzahl < 2 Then
-                                        Zeilenzahl = .Erneuerbare_Energien_65EE_keine_Regel_Anzahl
+                                    If .EE_65EE_Regel(Anzahl_Zeilen).Anteil_der_Pflichterfuellung_Gesamt.Wert <> 0 Then
+                                        Image_Zahl_schreiben(Grafik_Seite, Ausrichtung.EinzeiligMitte, .EE_65EE_Regel(Anzahl_Zeilen).Anteil_der_Pflichterfuellung_Gesamt.Wert, 0, "", 1837, 1998, 4540 + (Zeilenhoehe * (Anzahl_Zeilen - 1)), 4540 + (Zeilenhoehe * Anzahl_Zeilen), Font_Schriftgroesse_40, Font_Druckfarbe)
                                     End If
                                     '-------------------------------------------------------
-                                    For Anzahl_Zeilen = 1 To Zeilenzahl
-                                        '-------------------------------------------------------
-                                        Image_Text_schreiben(Grafik_Seite, Ausrichtung.EinzeiligLinks, .EE_65EE_keine_Regel(Anzahl_Zeilen).Art_der_Nutzung_erneuerbaren_Energie.Wert, 274, 1808, 4963 + (Zeilenhoehe * (Anzahl_Zeilen - 1)), 4963 + (Zeilenhoehe * Anzahl_Zeilen), Font_Schriftgroesse_40, Font_Druckfarbe)
-                                        '-------------------------------------------------------
-                                        If .EE_65EE_keine_Regel(Anzahl_Zeilen).Anteil_EE_Anlage.Wert <> 0 Then
-                                            Image_Zahl_schreiben(Grafik_Seite, Ausrichtung.EinzeiligMitte, .EE_65EE_keine_Regel(Anzahl_Zeilen).Anteil_EE_Anlage.Wert, 0, "", 1837, 1998, 4963 + (Zeilenhoehe * (Anzahl_Zeilen - 1)), 4963 + (Zeilenhoehe * Anzahl_Zeilen), Font_Schriftgroesse_40, Font_Druckfarbe)
-                                        End If
-                                        '-------------------------------------------------------
-                                    Next
+                                Next
+                                '-------------------------------------------------------
+                                If Gesamtsumme_Erneuerbare_Energien_65EE_Regel() <> 0 Then
+                                    Image_Zahl_schreiben(Grafik_Seite, Ausrichtung.EinzeiligMitte, Gesamtsumme_Erneuerbare_Energien_65EE_Regel(), 0, "", 1837, 1998, 4727, 4797, Font_Schriftgroesse_40, Font_Druckfarbe)
+                                End If
+                                '-------------------------------------------------------
+                                'Tabelle Erneuerbare-Energien-65EE-keine-Regel ---------
+                                '-------------------------------------------------------
+                                .Erneuerbare_Energien_65EE_keine_Regel_Anzahl = Anzahl_Erneuerbare_Energien_65EE_keine_Regel()
+                                ''-------------------------------------------------------
+                                Zeilenzahl = 2
+                                Zeilenhoehe = 93
+                                '-------------------------------------------------------
+                                If .Erneuerbare_Energien_65EE_keine_Regel_Anzahl < 2 Then
+                                    Zeilenzahl = .Erneuerbare_Energien_65EE_keine_Regel_Anzahl
+                                End If
+                                '-------------------------------------------------------
+                                For Anzahl_Zeilen = 1 To Zeilenzahl
                                     '-------------------------------------------------------
-                                    If Gesamtsumme_Erneuerbare_Energien_65EE_keine_Regel() <> 0 Then
-                                        Image_Zahl_schreiben(Grafik_Seite, Ausrichtung.EinzeiligMitte, Gesamtsumme_Erneuerbare_Energien_65EE_keine_Regel(), 0, "", 1837, 1998, 5150, 5219, Font_Schriftgroesse_40, Font_Druckfarbe)
+                                    Image_Text_schreiben(Grafik_Seite, Ausrichtung.EinzeiligLinks, .EE_65EE_keine_Regel(Anzahl_Zeilen).Art_der_Nutzung_erneuerbaren_Energie.Wert, 274, 1808, 4963 + (Zeilenhoehe * (Anzahl_Zeilen - 1)), 4963 + (Zeilenhoehe * Anzahl_Zeilen), Font_Schriftgroesse_40, Font_Druckfarbe)
+                                    '-------------------------------------------------------
+                                    If .EE_65EE_keine_Regel(Anzahl_Zeilen).Anteil_EE_Anlage.Wert <> 0 Then
+                                        Image_Zahl_schreiben(Grafik_Seite, Ausrichtung.EinzeiligMitte, .EE_65EE_keine_Regel(Anzahl_Zeilen).Anteil_EE_Anlage.Wert, 0, "", 1837, 1998, 4963 + (Zeilenhoehe * (Anzahl_Zeilen - 1)), 4963 + (Zeilenhoehe * Anzahl_Zeilen), Font_Schriftgroesse_40, Font_Druckfarbe)
                                     End If
                                     '-------------------------------------------------------
-                                    If .Erneuerbare_Energien_65EE_Regel_Anzahl > 2 Or .Erneuerbare_Energien_65EE_keine_Regel_Anzahl > 2 Or .Energieausweis_Daten.Wohngebaeude.Bedarfswerte_18599.Weitere_Eintraege_und_Erlaeuterungen_in_der_Anlage.Wert = True Then
-                                        '-------------------------------------------------------
-                                        Image_Auswahl_schreiben(Grafik_Seite, True, 280, 319, 5236, 5277)
-                                        '-------------------------------------------------------
-                                    End If
+                                Next
+                                '-------------------------------------------------------
+                                If Gesamtsumme_Erneuerbare_Energien_65EE_keine_Regel() <> 0 Then
+                                    Image_Zahl_schreiben(Grafik_Seite, Ausrichtung.EinzeiligMitte, Gesamtsumme_Erneuerbare_Energien_65EE_keine_Regel(), 0, "", 1837, 1998, 5150, 5219, Font_Schriftgroesse_40, Font_Druckfarbe)
+                                End If
+                                '-------------------------------------------------------
+                                If .Erneuerbare_Energien_65EE_Regel_Anzahl > 2 Or .Erneuerbare_Energien_65EE_keine_Regel_Anzahl > 2 Or .Energieausweis_Daten.Wohngebaeude.Bedarfswerte_18599.Weitere_Eintraege_und_Erlaeuterungen_in_der_Anlage.Wert = True Then
+                                    '-------------------------------------------------------
+                                    Image_Auswahl_schreiben(Grafik_Seite, True, 280, 319, 5236, 5277)
                                     '-------------------------------------------------------
                                 End If
                                 '-------------------------------------------------------
                             Case "Bedarfsberechnung-easy"
-                                '-------------------------------------------------------
-                                Image_Zahl_schreiben(Grafik_Seite, Ausrichtung.EinzeiligMitte, .Energieausweis_Daten.Treibhausgasemissionen.Wert, 2, "", 2622, 3025, 1124, 1226, Font_Schriftgroesse_50, Font_Druckfarbe)
-                                '-------------------------------------------------------
-                                Image_Zahl_schreiben(Grafik_Seite, Ausrichtung.EinzeiligMitte, .Energieausweis_Daten.Wohngebaeude.Bedarfswerte_easy.Primaerenergiebedarf_Anforderungswert.Wert, 1, "", 1657, 1880, 2416, 2518, Font_Schriftgroesse_40, Font_Druckfarbe)
-                                '-------------------------------------------------------
-                                Image_Zahl_schreiben(Grafik_Seite, Ausrichtung.EinzeiligMitte, .Energieausweis_Daten.Wohngebaeude.Bedarfswerte_easy.Energetische_Qualitaet_Ist_Wert.Wert, 2, "", 531, 753, 2668, 2771, Font_Schriftgroesse_40, Font_Druckfarbe)
-                                Image_Zahl_schreiben(Grafik_Seite, Ausrichtung.EinzeiligMitte, .Energieausweis_Daten.Wohngebaeude.Bedarfswerte_easy.Energetische_Qualitaet_Anforderungs_Wert.Wert, 2, "", 1657, 1880, 2668, 2771, Font_Schriftgroesse_40, Font_Druckfarbe)
-                                Image_Zahl_schreiben(Grafik_Seite, Ausrichtung.EinzeiligMitte, .Energieausweis_Daten.Wohngebaeude.Bedarfswerte_easy.Primaerenergiebedarf_Ist_Wert.Wert, 1, "", 531, 753, 2416, 2518, Font_Schriftgroesse_40, Font_Druckfarbe)
-                                Image_Zahl_schreiben(Grafik_Seite, Ausrichtung.EinzeiligMitte, .Energieausweis_Daten.Wohngebaeude.Bedarfswerte_easy.Endenergiebedarf.Wert, 1, "", 3103, 3643, 3013, 3184, Font_Schriftgroesse_60, Font_Druckfarbe)
-                                '-------------------------------------------------------
-                                Image_Auswahl_schreiben(Grafik_Seite, False, 1387, 1417, 2863, 2893)
-                                '-------------------------------------------------------
-                                Image_Auswahl_schreiben(Grafik_Seite, False, 2346, 2376, 2311, 2341)
-                                Image_Auswahl_schreiben(Grafik_Seite, True, 2346, 2376, 2396, 2426)
-                                '-------------------------------------------------------
-                                Image_Auswahl_schreiben(Grafik_Seite, False, 2346, 2376, 2480, 2510)
-                                '-------------------------------------------------------
-                                Image_Pfeil_WB(Grafik_Seite, Lage.Oben, .Energieausweis_Daten.Wohngebaeude.Bedarfswerte_easy.Endenergiebedarf.Wert, 1, "Endenergiebedarf dieses Gebäudes", 543, 3623, 1535, 1874)
-                                '-------------------------------------------------------
-                                Image_Pfeil_WB(Grafik_Seite, Lage.Unten, .Energieausweis_Daten.Wohngebaeude.Bedarfswerte_easy.Primaerenergiebedarf_Ist_Wert.Wert, 1, "Primärenergiebedarf dieses Gebäudes", 543, 3623, 1535, 1874)
-                                '-------------------------------------------------------
-                                'Erneuerbare Energien ----------------------------------
-                                '-------------------------------------------------------
-                                If .Energieausweis_Daten.Nutzung_zur_Erfuellung_von_EE_neue_Anlage.Wert = True Then
-                                    '-------------------------------------------------------
-                                    Image_Auswahl_schreiben(Grafik_Seite, .Energieausweis_Daten.Nutzung_zur_Erfuellung_von_EE_neue_Anlage.Wert, 280, 319, 3547, 3589)
-                                    '-------------------------------------------------------
-                                    Image_Auswahl_schreiben(Grafik_Seite, .Energieausweis_Daten.EE_Angabe_Heizung.Wert, 1228, 1273, 3468, 3514)
-                                    Image_Auswahl_schreiben(Grafik_Seite, .Energieausweis_Daten.EE_Angabe_Warmwasser.Wert, 1603, 1650, 3468, 3514)
-                                    '-------------------------------------------------------
-                                    Select Case .Energieausweis_Daten.Keine_Pauschale_Erfuellungsoptionen_Anlagentyp.Wert
-                                        Case True
-                                            '-------------------------------------------------------
-                                            Image_Auswahl_schreiben(Grafik_Seite, False, 349, 389, 3693, 3734)
-                                            Image_Auswahl_schreiben(Grafik_Seite, True, 349, 389, 4312, 4354)
-                                            '-------------------------------------------------------
-                                        Case Else
-                                            '-------------------------------------------------------
-                                            Image_Auswahl_schreiben(Grafik_Seite, True, 349, 389, 3693, 3734)
-                                            Image_Auswahl_schreiben(Grafik_Seite, False, 349, 389, 4312, 4354)
-                                            '-------------------------------------------------------
-                                            Image_Auswahl_schreiben(Grafik_Seite, .Energieausweis_Daten.Hausuebergabestation.Wert, 447, 485, 3836, 3873)
-                                            Image_Auswahl_schreiben(Grafik_Seite, .Energieausweis_Daten.Waermepumpe.Wert, 447, 485, 3889, 3925)
-                                            Image_Auswahl_schreiben(Grafik_Seite, .Energieausweis_Daten.Stromdirektheizung.Wert, 447, 485, 3945, 3980)
-                                            Image_Auswahl_schreiben(Grafik_Seite, .Energieausweis_Daten.Solarthermische_Anlage.Wert, 447, 485, 3998, 4034)
-                                            Image_Auswahl_schreiben(Grafik_Seite, .Energieausweis_Daten.Heizungsanlage_Biomasse_Wasserstoff_Wasserstoffderivale.Wert, 447, 485, 4048, 4084)
-                                            Image_Auswahl_schreiben(Grafik_Seite, .Energieausweis_Daten.Waermepumpen_Hybridheizung.Wert, 447, 485, 4103, 4139)
-                                            Image_Auswahl_schreiben(Grafik_Seite, .Energieausweis_Daten.Solarthermie_Hybridheizung.Wert, 447, 485, 4152, 4188)
-                                            Image_Auswahl_schreiben(Grafik_Seite, .Energieausweis_Daten.Dezentral_elektrische_Warmwasserbereitung.Wert, 447, 485, 4208, 4243)
-                                            '-------------------------------------------------------
-                                    End Select
-                                    '-------------------------------------------------------
-                                End If
-                                '-------------------------------------------------------
-                                If .Energieausweis_Daten.Keine_Pauschale_Erfuellungsoptionen_Anlagentyp.Wert = False Then
-                                    '-------------------------------------------------------
-                                    Image_Auswahl_schreiben(Grafik_Seite, .Energieausweis_Daten.Nutzung_bei_Bestandsanlagen.Wert, 280, 319, 4838, 4880)
-                                    '-------------------------------------------------------
-                                    'Tabelle Erneuerbare-Energien-65EE-Regel ---------------
-                                    '-------------------------------------------------------
-                                    .Erneuerbare_Energien_65EE_Regel_Anzahl = Anzahl_Erneuerbare_Energien_65EE_Regel()
-                                    ''-------------------------------------------------------
-                                    Zeilenzahl = 2
-                                    Zeilenhoehe = 90
-                                    '-------------------------------------------------------
-                                    If .Erneuerbare_Energien_65EE_Regel_Anzahl < 2 Then
-                                        Zeilenzahl = .Erneuerbare_Energien_65EE_Regel_Anzahl
-                                    End If
-                                    '-------------------------------------------------------
-                                    For Anzahl_Zeilen = 1 To Zeilenzahl
-                                        '-------------------------------------------------------
-                                        Image_Text_schreiben(Grafik_Seite, Ausrichtung.EinzeiligLinks, .EE_65EE_Regel(Anzahl_Zeilen).Art_der_Nutzung_erneuerbaren_Energie.Wert, 281, 1297, 4540 + (Zeilenhoehe * (Anzahl_Zeilen - 1)), 4540 + (Zeilenhoehe * Anzahl_Zeilen), Font_Schriftgroesse_40, Font_Druckfarbe)
-                                        '-------------------------------------------------------
-                                        If .EE_65EE_Regel(Anzahl_Zeilen).Deckungsanteil.Wert <> 0 Then
-                                            Image_Zahl_schreiben(Grafik_Seite, Ausrichtung.EinzeiligMitte, .EE_65EE_Regel(Anzahl_Zeilen).Deckungsanteil.Wert, 0, "", 1316, 1460, 4540 + (Zeilenhoehe * (Anzahl_Zeilen - 1)), 4540 + (Zeilenhoehe * Anzahl_Zeilen), Font_Schriftgroesse_40, Font_Druckfarbe)
-                                        End If
-                                        '-------------------------------------------------------
-                                        If .EE_65EE_Regel(Anzahl_Zeilen).Anteil_der_Pflichterfuellung_Anlage.Wert <> 0 Then
-                                            Image_Zahl_schreiben(Grafik_Seite, Ausrichtung.EinzeiligMitte, .EE_65EE_Regel(Anzahl_Zeilen).Anteil_der_Pflichterfuellung_Anlage.Wert, 0, "", 1577, 1735, 4540 + (Zeilenhoehe * (Anzahl_Zeilen - 1)), 4540 + (Zeilenhoehe * Anzahl_Zeilen), Font_Schriftgroesse_40, Font_Druckfarbe)
-                                        End If
-                                        '-------------------------------------------------------
-                                        If .EE_65EE_Regel(Anzahl_Zeilen).Anteil_der_Pflichterfuellung_Gesamt.Wert <> 0 Then
-                                            Image_Zahl_schreiben(Grafik_Seite, Ausrichtung.EinzeiligMitte, .EE_65EE_Regel(Anzahl_Zeilen).Anteil_der_Pflichterfuellung_Gesamt.Wert, 0, "", 1837, 1998, 4540 + (Zeilenhoehe * (Anzahl_Zeilen - 1)), 4540 + (Zeilenhoehe * Anzahl_Zeilen), Font_Schriftgroesse_40, Font_Druckfarbe)
-                                        End If
-                                        '-------------------------------------------------------
-                                    Next
-                                    '-------------------------------------------------------
-                                    If Gesamtsumme_Erneuerbare_Energien_65EE_Regel() <> 0 Then
-                                        Image_Zahl_schreiben(Grafik_Seite, Ausrichtung.EinzeiligMitte, Gesamtsumme_Erneuerbare_Energien_65EE_Regel(), 0, "", 1837, 1998, 4727, 4797, Font_Schriftgroesse_40, Font_Druckfarbe)
-                                    End If
-                                    '-------------------------------------------------------
-                                    'Tabelle Erneuerbare-Energien-65EE-keine-Regel ---------
-                                    '-------------------------------------------------------
-                                    .Erneuerbare_Energien_65EE_keine_Regel_Anzahl = Anzahl_Erneuerbare_Energien_65EE_keine_Regel()
-                                    ''-------------------------------------------------------
-                                    Zeilenzahl = 2
-                                    Zeilenhoehe = 93
-                                    '-------------------------------------------------------
-                                    If .Erneuerbare_Energien_65EE_keine_Regel_Anzahl < 2 Then
-                                        Zeilenzahl = .Erneuerbare_Energien_65EE_keine_Regel_Anzahl
-                                    End If
-                                    '-------------------------------------------------------
-                                    For Anzahl_Zeilen = 1 To Zeilenzahl
-                                        '-------------------------------------------------------
-                                        Image_Text_schreiben(Grafik_Seite, Ausrichtung.EinzeiligLinks, .EE_65EE_keine_Regel(Anzahl_Zeilen).Art_der_Nutzung_erneuerbaren_Energie.Wert, 274, 1808, 4963 + (Zeilenhoehe * (Anzahl_Zeilen - 1)), 4963 + (Zeilenhoehe * Anzahl_Zeilen), Font_Schriftgroesse_40, Font_Druckfarbe)
-                                        '-------------------------------------------------------
-                                        If .EE_65EE_keine_Regel(Anzahl_Zeilen).Anteil_EE_Anlage.Wert <> 0 Then
-                                            Image_Zahl_schreiben(Grafik_Seite, Ausrichtung.EinzeiligMitte, .EE_65EE_keine_Regel(Anzahl_Zeilen).Anteil_EE_Anlage.Wert, 0, "", 1837, 1998, 4963 + (Zeilenhoehe * (Anzahl_Zeilen - 1)), 4963 + (Zeilenhoehe * Anzahl_Zeilen), Font_Schriftgroesse_40, Font_Druckfarbe)
-                                        End If
-                                        '-------------------------------------------------------
-                                    Next
-                                    '-------------------------------------------------------
-                                    If Gesamtsumme_Erneuerbare_Energien_65EE_keine_Regel() <> 0 Then
-                                        Image_Zahl_schreiben(Grafik_Seite, Ausrichtung.EinzeiligMitte, Gesamtsumme_Erneuerbare_Energien_65EE_keine_Regel(), 0, "", 1837, 1998, 5150, 5219, Font_Schriftgroesse_40, Font_Druckfarbe)
-                                    End If
-                                    '-------------------------------------------------------
-                                    '-------------------------------------------------------
-                                    If .Erneuerbare_Energien_65EE_Regel_Anzahl > 2 Or .Erneuerbare_Energien_65EE_keine_Regel_Anzahl > 2 Then
-                                        '-------------------------------------------------------
-                                        Image_Auswahl_schreiben(Grafik_Seite, True, 280, 319, 5236, 5277)
-                                        '-------------------------------------------------------
-                                    End If
-                                    '-------------------------------------------------------
-                                End If
-                                '-------------------------------------------------------
+                                ''-------------------------------------------------------
+                                'Eine Berechnung nach Easy gibt es für die GEG 2024 nicht
+                                ''-------------------------------------------------------
                         End Select
                         '-------------------------------------------------------
                 End Select

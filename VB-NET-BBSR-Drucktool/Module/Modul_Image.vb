@@ -6,7 +6,7 @@ Imports BBSR_Energieausweis.DynaPDF
 #End Region
 '--------------------------------------------------
 Module Modul_Image
-    '-------------------------------------------------------
+    '--------------------------------------------------
 #Region "Image erstellen - String"
     '--------------------------------------------------
     ''' <summary>
@@ -35,7 +35,7 @@ Module Modul_Image
                         Text = TextAbschneiden(Text, (X2 - X1), Font)
                         '-------------------------------------------------------
                         ImageBox.DrawString(Text, Font, Farbe, Rechteck, Format_Text)
-                    '-------------------------------------------------------
+                        '-------------------------------------------------------
                     Case Ausrichtung.EinzeiligMitte
                         '-------------------------------------------------------
                         Format_Text.Alignment = StringAlignment.Center
@@ -46,7 +46,7 @@ Module Modul_Image
                         Text = TextAbschneiden(Text, (X2 - X1), Font)
                         '-------------------------------------------------------
                         ImageBox.DrawString(Text, Font, Farbe, Rechteck, Format_Text)
-                    '-------------------------------------------------------
+                        '-------------------------------------------------------
                     Case Ausrichtung.EinzeiligRechts
                         '-------------------------------------------------------
                         Format_Text.Alignment = StringAlignment.Far
@@ -57,8 +57,8 @@ Module Modul_Image
                         Text = TextAbschneiden(Text, (X2 - X1), Font)
                         '-------------------------------------------------------
                         ImageBox.DrawString(Text, Font, Farbe, Rechteck, Format_Text)
-                    '-------------------------------------------------------
-                    '-------------------------------------------------------
+                        '-------------------------------------------------------
+                        '-------------------------------------------------------
                     Case Ausrichtung.MehrzeiligLinksMitte
                         '-------------------------------------------------------
                         Format_Text.Alignment = StringAlignment.Near
@@ -67,7 +67,7 @@ Module Modul_Image
                         Dim Rechteck As New RectangleF(X1, Y1, (X2 - X1), (Y2 - Y1))
                         '-------------------------------------------------------
                         ImageBox.DrawString(Text, Font, Farbe, Rechteck, Format_Text)
-                    '-------------------------------------------------------
+                        '-------------------------------------------------------
                     Case Ausrichtung.MehrzeiligMitteMitte
                         '-------------------------------------------------------
                         Format_Text.Alignment = StringAlignment.Center
@@ -76,7 +76,7 @@ Module Modul_Image
                         Dim Rechteck As New RectangleF(X1, Y1, (X2 - X1), (Y2 - Y1))
                         '-------------------------------------------------------
                         ImageBox.DrawString(Text, Font, Farbe, Rechteck, Format_Text)
-                    '-------------------------------------------------------
+                        '-------------------------------------------------------
                     Case Ausrichtung.MehrzeiligRechtsMitte
                         '-------------------------------------------------------
                         Format_Text.Alignment = StringAlignment.Far
@@ -85,8 +85,8 @@ Module Modul_Image
                         Dim Rechteck As New RectangleF(X1, Y1, (X2 - X1), (Y2 - Y1))
                         '-------------------------------------------------------
                         ImageBox.DrawString(Text, Font, Farbe, Rechteck, Format_Text)
-                    '-------------------------------------------------------
-                    '-------------------------------------------------------
+                        '-------------------------------------------------------
+                        '-------------------------------------------------------
                     Case Ausrichtung.MehrzeiligLinksOben
                         '-------------------------------------------------------
                         Format_Text.Alignment = StringAlignment.Near
@@ -95,7 +95,7 @@ Module Modul_Image
                         Dim Rechteck As New RectangleF(X1, Y1 + Abstand_Oben, (X2 - X1), (Y2 - Y1 - Abstand_Oben))
                         '-------------------------------------------------------
                         ImageBox.DrawString(Text, Font, Farbe, Rechteck, Format_Text)
-                    '-------------------------------------------------------
+                        '-------------------------------------------------------
                     Case Ausrichtung.MehrzeiligMitteOben
                         '-------------------------------------------------------
                         Format_Text.Alignment = StringAlignment.Center
@@ -104,7 +104,7 @@ Module Modul_Image
                         Dim Rechteck As New RectangleF(X1, Y1 + Abstand_Oben, (X2 - X1), (Y2 - Y1 - Abstand_Oben))
                         '-------------------------------------------------------
                         ImageBox.DrawString(Text, Font, Farbe, Rechteck, Format_Text)
-                    '-------------------------------------------------------
+                        '-------------------------------------------------------
                     Case Ausrichtung.MehrzeiligRechtsOben
                         '-------------------------------------------------------
                         Format_Text.Alignment = StringAlignment.Far
@@ -113,7 +113,7 @@ Module Modul_Image
                         Dim Rechteck As New RectangleF(X1, Y1 + Abstand_Oben, (X2 - X1), (Y2 - Y1 - Abstand_Oben))
                         '-------------------------------------------------------
                         ImageBox.DrawString(Text, Font, Farbe, Rechteck, Format_Text)
-                    '-------------------------------------------------------
+                        '-------------------------------------------------------
                     Case Ausrichtung.Links_kein_Abschneiden
                         '-------------------------------------------------------
                         PointText.X = X1
@@ -125,7 +125,7 @@ Module Modul_Image
                         PointText.X = (X2) - (ImageBox.MeasureString(Text, Font).Width)
                         PointText.Y = ((Y1 + ((Y2 - Y1) / 2))) - (ImageBox.MeasureString(Text, Font).Height * 0.5)
                         ImageBox.DrawString(Text, Font, Farbe, PointText, Format_Text)
-                    '-------------------------------------------------------
+                        '-------------------------------------------------------
                     Case Ausrichtung.Mitte_kein_Abschneiden
                         '-------------------------------------------------------
                         PointText.X = ((X1 + ((X2 - X1) / 2))) - (ImageBox.MeasureString(Text, Font).Width * 0.5)
@@ -236,13 +236,13 @@ Module Modul_Image
                     PointText.X = X1
                     PointText.Y = ((Y1 + ((Y2 - Y1) / 2))) - (ImageBox.MeasureString(FormatNumber(Zahl, Kommastelle), Font).Height * 0.5)
                     ImageBox.DrawString(FormatNumber(Zahl, Kommastelle) & Einheit, Font, Farbe, PointText)
-                '-------------------------------------------------------
+                    '-------------------------------------------------------
                 Case Ausrichtung.EinzeiligMitte
                     '-------------------------------------------------------
                     PointText.X = ((X1 + ((X2 - X1) / 2))) - (ImageBox.MeasureString(FormatNumber(Zahl, Kommastelle) & Einheit, Font).Width * 0.5)
                     PointText.Y = ((Y1 + ((Y2 - Y1) / 2))) - (ImageBox.MeasureString(FormatNumber(Zahl, Kommastelle), Font).Height * 0.5)
                     ImageBox.DrawString(FormatNumber(Zahl, Kommastelle) & Einheit, Font, Farbe, PointText)
-                '-------------------------------------------------------
+                    '-------------------------------------------------------
                 Case Ausrichtung.EinzeiligRechts
                     '-------------------------------------------------------
                     PointText.X = (X2) - (ImageBox.MeasureString(FormatNumber(Zahl, Kommastelle) & Einheit, Font).Width)
@@ -254,7 +254,7 @@ Module Modul_Image
                     PointText.X = X1
                     PointText.Y = ((Y1 + ((Y2 - Y1) / 2))) - (ImageBox.MeasureString(FormatNumber(Zahl, Kommastelle) & Einheit, Font).Height * 0.5)
                     ImageBox.DrawString(FormatNumber(Zahl, Kommastelle) & Einheit, Font, Farbe, PointText, Format_Text)
-                        '-------------------------------------------------------
+                    '-------------------------------------------------------
                 Case Ausrichtung.Rechts_kein_Abschneiden
                     '-------------------------------------------------------
                     PointText.X = (X2) - (ImageBox.MeasureString(FormatNumber(Zahl, Kommastelle) & Einheit, Font).Width)
@@ -293,13 +293,13 @@ Module Modul_Image
                     PointText.X = X1
                     PointText.Y = ((Y1 + ((Y2 - Y1) / 2))) - (ImageBox.MeasureString(FormatNumber(Zahl, Kommastelle), Font).Height * 0.5)
                     ImageBox.DrawString(Attribut & FormatNumber(Zahl, Kommastelle) & Einheit, Font, Farbe, PointText)
-                '-------------------------------------------------------
+                    '-------------------------------------------------------
                 Case Ausrichtung.EinzeiligMitte
                     '-------------------------------------------------------
                     PointText.X = ((X1 + ((X2 - X1) / 2))) - (ImageBox.MeasureString(Attribut & FormatNumber(Zahl, Kommastelle) & Einheit, Font).Width * 0.5)
                     PointText.Y = ((Y1 + ((Y2 - Y1) / 2))) - (ImageBox.MeasureString(FormatNumber(Zahl, Kommastelle), Font).Height * 0.5)
                     ImageBox.DrawString(Attribut & FormatNumber(Zahl, Kommastelle) & Einheit, Font, Farbe, PointText)
-                '-------------------------------------------------------
+                    '-------------------------------------------------------
                 Case Ausrichtung.EinzeiligRechts
                     '-------------------------------------------------------
                     PointText.X = (X2) - (ImageBox.MeasureString(Attribut & FormatNumber(Zahl, Kommastelle) & Einheit, Font).Width)
@@ -333,13 +333,13 @@ Module Modul_Image
                     PointText.X = X1
                     PointText.Y = ((Y1 + ((Y2 - Y1) / 2))) - (ImageBox.MeasureString(FormatDateTime(Datum, DateFormat.ShortDate).ToString, Font).Height * 0.5)
                     ImageBox.DrawString(FormatDateTime(Datum, DateFormat.ShortDate).ToString, Font, Farbe, PointText)
-                '-------------------------------------------------------
+                    '-------------------------------------------------------
                 Case Ausrichtung.EinzeiligMitte
                     '-------------------------------------------------------
                     PointText.X = ((X1 + ((X2 - X1) / 2))) - (ImageBox.MeasureString(FormatDateTime(Datum, DateFormat.ShortDate).ToString, Font).Width * 0.5)
                     PointText.Y = ((Y1 + ((Y2 - Y1) / 2))) - (ImageBox.MeasureString(FormatDateTime(Datum, DateFormat.ShortDate).ToString, Font).Height * 0.5)
                     ImageBox.DrawString(FormatDateTime(Datum, DateFormat.ShortDate).ToString, Font, Farbe, PointText)
-                '-------------------------------------------------------
+                    '-------------------------------------------------------
                 Case Ausrichtung.EinzeiligRechts
                     '-------------------------------------------------------
                     PointText.X = (X2) - (ImageBox.MeasureString(FormatDateTime(Datum, DateFormat.ShortDate).ToString, Font).Width)
@@ -376,7 +376,7 @@ Module Modul_Image
                         '-------------------------------------------------------
                         ImageBox.DrawLine(Stift_Auswahl, X1, Y1, X2, Y2)
                         ImageBox.DrawLine(Stift_Auswahl, X2, Y1, X1, Y2)
-                    '-------------------------------------------------------
+                        '-------------------------------------------------------
                     Case 1
                         '-------------------------------------------------------
                         ImageBox.DrawLine(Stift_Auswahl, X1 - Ueberhang, Y1 - Ueberhang, X2 + Ueberhang, Y2 + Ueberhang)
@@ -1150,6 +1150,13 @@ Module Modul_Image
                     '--------------------------------------------------
                     pdf.Append()
                     pdf.InsertImageFromBuffer(0.0, 0.0, 595.0, 842.0, GetArrayFromImage(String_to_Image(Variable_XML_Import.Bilddateien(WertXX))), WertXX - 1)
+                    '--------------------------------------------------
+                    'pdf.Rectangle(50, 50, 50, 50, TPathFillMode.fmFill)
+                    '--------------------------------------------------
+                    'pdf.SetFont("Arial", DynaPDF.TFStyle.fsItalic, 12, True, DynaPDF.TCodepage.cp1252)
+                    'pdf.WriteText(50.0, 50.0, "My first PDF output...")
+                    'pdf.WriteText(50.0, 80.0, "File created: " + DateTime.Now.ToString())
+                    '--------------------------------------------------
                     pdf.EndPage()
                     '--------------------------------------------------
                     Speicher_freigeben()
@@ -1237,7 +1244,7 @@ Module Modul_Image
     End Function
     '-----------------------------------------------------------------------------
 #End Region
-    '-----------------------------------------------------------------------------
+    '--------------------------------------------------
 #Region "Image to String"
     '---------------------------------------------------------------------------------
     ''' <summary>
@@ -1294,7 +1301,7 @@ Module Modul_Image
     End Function
     '---------------------------------------------------------------------------------
 #End Region
-    '---------------------------------------------------------------------------------
+    '--------------------------------------------------
 #Region "Bitmap skalieren"
     '--------------------------------------------------
     ''' <summary>
@@ -1318,5 +1325,5 @@ Module Modul_Image
     End Function
     '--------------------------------------------------
 #End Region
-    '-----------------------------------------------------------------------------
+    '--------------------------------------------------
 End Module

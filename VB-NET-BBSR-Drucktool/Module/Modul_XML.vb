@@ -1108,14 +1108,21 @@ Module Modul_XML
                                     .Innovationsklausel.Wert = ImportBool(Wert)
                                 Case "Quartiersregelung"
                                     .Quartiersregelung.Wert = ImportBool(Wert)
+                                    '---------------------------------------------------------
                                 Case "Primaerenergiebedarf-Hoechstwert-Bestand"
                                     .Primaerenergiebedarf_Hoechstwert_Bestand.Wert = ImportDec(Wert)
+                                Case "Endenergiebedarf-Hoechstwert-Bestand"
+                                    .Endenergiebedarf_Hoechstwert_Bestand.Wert = ImportDec(Wert)
+                                Case "Treibhausgasemissionen-Hoechstwert-Bestand"
+                                    .Treibhausgasemissionen_Hoechstwert_Bestand.Wert = ImportDec(Wert)
+                                    '---------------------------------------------------------
                                 Case "Primaerenergiebedarf-Hoechstwert-Neubau"
                                     .Primaerenergiebedarf_Hoechstwert_Neubau.Wert = ImportDec(Wert)
                                 Case "Endenergiebedarf-Hoechstwert-Neubau"
                                     .Endenergiebedarf_Hoechstwert_Neubau.Wert = ImportDec(Wert)
                                 Case "Treibhausgasemissionen-Hoechstwert-Neubau"
                                     .Treibhausgasemissionen_Hoechstwert_Neubau.Wert = ImportDec(Wert)
+                                    '---------------------------------------------------------
                                 Case "Endenergiebedarf-Waerme-AN"
                                     .Endenergiebedarf_Waerme_AN.Wert = ImportDec(Wert)
                                 Case "Endenergiebedarf-Hilfsenergie-AN"
@@ -1225,14 +1232,21 @@ Module Modul_XML
                                     .Innovationsklausel.Wert = ImportBool(Wert)
                                 Case "Quartiersregelung"
                                     .Quartiersregelung.Wert = ImportBool(Wert)
+                                    '---------------------------------------------------------
                                 Case "Primaerenergiebedarf-Hoechstwert-Bestand"
                                     .Primaerenergiebedarf_Hoechstwert_Bestand.Wert = ImportDec(Wert)
+                                Case "Endenergiebedarf-Hoechstwert-Bestand"
+                                    .Endenergiebedarf_Hoechstwert_Bestand.Wert = ImportDec(Wert)
+                                Case "Treibhausgasemissionen-Hoechstwert-Bestand"
+                                    .Treibhausgasemissionen_Hoechstwert_Bestand.Wert = ImportDec(Wert)
+                                    '---------------------------------------------------------
                                 Case "Primaerenergiebedarf-Hoechstwert-Neubau"
                                     .Primaerenergiebedarf_Hoechstwert_Neubau.Wert = ImportDec(Wert)
                                 Case "Endenergiebedarf-Hoechstwert-Neubau"
                                     .Endenergiebedarf_Hoechstwert_Neubau.Wert = ImportDec(Wert)
                                 Case "Treibhausgasemissionen-Hoechstwert-Neubau"
                                     .Treibhausgasemissionen_Hoechstwert_Neubau.Wert = ImportDec(Wert)
+                                    '---------------------------------------------------------
                                 Case "Endenergiebedarf-Waerme-NGF"
                                     .Endenergiebedarf_Waerme_NGF.Wert = ImportDec(Wert)
                                 Case "Endenergiebedarf-Strom-NGF"
@@ -2284,7 +2298,6 @@ Module Modul_XML
             '--------------------------------------------------
             Doc.InnerXml = XML_Kontrolldatei_Knoten_loeschen(Doc.InnerXml, "Signature")
             '--------------------------------------------------
-            'Doc.CreateXmlDeclaration("1.0", "UTF-8", Nothing)
             Doc.Save(Variable_Steuerung.Kontrolldatei)
             '--------------------------------------------------
         Catch ex As Exception

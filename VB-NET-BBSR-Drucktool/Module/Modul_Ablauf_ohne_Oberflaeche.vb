@@ -106,6 +106,8 @@ Module Modul_Ablauf_ohne_Oberflaeche
                     '--------------------------------------------------
                 Case "Energieausweis-Komplett"
                     '--------------------------------------------------
+                    Variable_Steuerung.Entwurf = False
+                    '--------------------------------------------------
                     Webservice_Datenregistratur_ansteuern_und_auswerten()
                     '--------------------------------------------------
                     Kontrolldatei_lesen()
@@ -122,6 +124,8 @@ Module Modul_Ablauf_ohne_Oberflaeche
                     '--------------------------------------------------
                 Case "Energieausweis-Komplett-ohne-Zusatzdatenerfassung"
                     '--------------------------------------------------
+                    Variable_Steuerung.Entwurf = False
+                    '--------------------------------------------------
                     Webservice_Datenregistratur_ansteuern_und_auswerten()
                     '--------------------------------------------------
                     Kontrolldatei_lesen()
@@ -136,6 +140,8 @@ Module Modul_Ablauf_ohne_Oberflaeche
                     '--------------------------------------------------
                 Case "Energieausweis-Komplett-ohne-Pruefung"
                     '--------------------------------------------------
+                    Variable_Steuerung.Entwurf = False
+                    '--------------------------------------------------
                     Webservice_Datenregistratur_ansteuern_und_auswerten()
                     '--------------------------------------------------
                     Kontrolldatei_lesen()
@@ -149,6 +155,8 @@ Module Modul_Ablauf_ohne_Oberflaeche
                     Steuerungsdatei_erstellen()
                     '--------------------------------------------------
                 Case "Energieausweis-Komplett-ohne-Pruefung-ohne-Zusatzdatenerfassung"
+                    '--------------------------------------------------
+                    Variable_Steuerung.Entwurf = False
                     '--------------------------------------------------
                     Webservice_Datenregistratur_ansteuern_und_auswerten()
                     '--------------------------------------------------

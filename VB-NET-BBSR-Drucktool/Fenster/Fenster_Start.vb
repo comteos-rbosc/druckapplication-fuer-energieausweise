@@ -286,6 +286,8 @@ Public Class Fenster_Start
                     '--------------------------------------------------
                     Eigenschaften_Fenster_Start_festlegen(1)
                     '--------------------------------------------------
+                    Variable_Steuerung.Entwurf = False
+                    '--------------------------------------------------
                     Webservice_Datenregistratur_ansteuern_und_auswerten()
                     '--------------------------------------------------
                     ProgressBar.Value = 20
@@ -320,6 +322,8 @@ Public Class Fenster_Start
                     '--------------------------------------------------
                     Eigenschaften_Fenster_Start_festlegen(1)
                     '--------------------------------------------------
+                    Variable_Steuerung.Entwurf = False
+                    '--------------------------------------------------
                     Webservice_Datenregistratur_ansteuern_und_auswerten()
                     '--------------------------------------------------
                     ProgressBar.Value = 20
@@ -350,6 +354,8 @@ Public Class Fenster_Start
                     '--------------------------------------------------
                     Eigenschaften_Fenster_Start_festlegen(1)
                     '--------------------------------------------------
+                    Variable_Steuerung.Entwurf = False
+                    '--------------------------------------------------
                     Webservice_Datenregistratur_ansteuern_und_auswerten()
                     '--------------------------------------------------
                     ProgressBar.Value = 20
@@ -379,6 +385,8 @@ Public Class Fenster_Start
                 Case "Energieausweis-Komplett-ohne-Pruefung-ohne-Zusatzdatenerfassung"
                     '--------------------------------------------------
                     Eigenschaften_Fenster_Start_festlegen(1)
+                    '--------------------------------------------------
+                    Variable_Steuerung.Entwurf = False
                     '--------------------------------------------------
                     Webservice_Datenregistratur_ansteuern_und_auswerten()
                     '--------------------------------------------------
@@ -499,15 +507,15 @@ Public Class Fenster_Start
                 '--------------------------------------------------
             End If
             '--------------------------------------------------
+            Windows.Forms.Cursor.Current = Cursors.Default
+            '--------------------------------------------------
+            ProgressBar.Visible = False
+            '--------------------------------------------------
             If Variable_Steuerung.Anwendung_beenden = True Then
                 '--------------------------------------------------
                 Me.Close()
                 '--------------------------------------------------
             End If
-            '--------------------------------------------------
-            Windows.Forms.Cursor.Current = Cursors.Default
-            '--------------------------------------------------
-            ProgressBar.Visible = False
             '--------------------------------------------------
         Catch ex As Exception
             Fehlerfenster(ex)

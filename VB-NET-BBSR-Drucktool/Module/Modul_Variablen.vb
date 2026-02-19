@@ -604,7 +604,11 @@ Module Modul_Variablen
         Dim angerechneter_lokaler_erneuerbarer_Strom As VarInteger
         Dim Innovationsklausel As VarBoolean
         Dim Quartiersregelung As VarBoolean
+        '---------------------------------------------------------
         Dim Primaerenergiebedarf_Hoechstwert_Bestand As VarDecimal
+        Dim Endenergiebedarf_Hoechstwert_Bestand As VarDecimal
+        Dim Treibhausgasemissionen_Hoechstwert_Bestand As VarDecimal
+        '---------------------------------------------------------
         Dim Primaerenergiebedarf_Hoechstwert_Neubau As VarDecimal
         Dim Endenergiebedarf_Hoechstwert_Neubau As VarDecimal
         Dim Treibhausgasemissionen_Hoechstwert_Neubau As VarDecimal

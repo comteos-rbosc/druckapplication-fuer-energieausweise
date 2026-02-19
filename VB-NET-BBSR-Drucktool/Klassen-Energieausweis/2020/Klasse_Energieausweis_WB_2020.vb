@@ -234,16 +234,14 @@ Public Class Klasse_Energieausweis_WB_2020
                                 Select Case .Energieausweis_Daten.Ausstellungsanlass.Wert
                                     Case "Neubau", "Modernisierung-Erweiterung"
                                         '-------------------------------------------------------
+                                        Image_Zahl_schreiben(Grafik_Seite, Ausrichtung.EinzeiligMitte, .Energieausweis_Daten.Treibhausgasemissionen.Wert, 2, "", 2622, 3025, 1124, 1226, Font_Schriftgroesse_50, Font_Druckfarbe)
+                                        '-------------------------------------------------------
                                         Select Case Variable_Steuerung.Neubau
                                             Case 0 'Modernisierung
-                                                '-------------------------------------------------------
-                                                Image_Zahl_schreiben(Grafik_Seite, Ausrichtung.EinzeiligMitte, .Energieausweis_Daten.Wohngebaeude.Bedarfswerte_4108_4701.Treibhausgasemissionen_Hoechstwert_Bestand.Wert, 2, "", 2622, 3025, 1124, 1226, Font_Schriftgroesse_50, Font_Druckfarbe)
                                                 '-------------------------------------------------------
                                                 Image_Zahl_schreiben(Grafik_Seite, Ausrichtung.EinzeiligMitte, .Energieausweis_Daten.Wohngebaeude.Bedarfswerte_4108_4701.Primaerenergiebedarf_Hoechstwert_Bestand.Wert, 1, "", 1657, 1880, 2416, 2518, Font_Schriftgroesse_40, Font_Druckfarbe)
                                                 '-------------------------------------------------------
                                             Case 1 'Neubau
-                                                '-------------------------------------------------------
-                                                Image_Zahl_schreiben(Grafik_Seite, Ausrichtung.EinzeiligMitte, .Energieausweis_Daten.Wohngebaeude.Bedarfswerte_4108_4701.Treibhausgasemissionen_Hoechstwert_Neubau.Wert, 2, "", 2622, 3025, 1124, 1226, Font_Schriftgroesse_50, Font_Druckfarbe)
                                                 '-------------------------------------------------------
                                                 Image_Zahl_schreiben(Grafik_Seite, Ausrichtung.EinzeiligMitte, .Energieausweis_Daten.Wohngebaeude.Bedarfswerte_4108_4701.Primaerenergiebedarf_Hoechstwert_Neubau.Wert, 1, "", 1657, 1880, 2416, 2518, Font_Schriftgroesse_40, Font_Druckfarbe)
                                                 '-------------------------------------------------------
@@ -318,16 +316,18 @@ Public Class Klasse_Energieausweis_WB_2020
                                 Select Case .Energieausweis_Daten.Ausstellungsanlass.Wert
                                     Case "Neubau", "Modernisierung-Erweiterung"
                                         '-------------------------------------------------------
+                                        Image_Zahl_schreiben(Grafik_Seite, Ausrichtung.EinzeiligMitte, .Energieausweis_Daten.Treibhausgasemissionen.Wert, 2, "", 2622, 3025, 1124, 1226, Font_Schriftgroesse_50, Font_Druckfarbe)
+                                        '-------------------------------------------------------
                                         Select Case Variable_Steuerung.Neubau
                                             Case 0 'Modernisierung
                                                 '-------------------------------------------------------
-                                                Image_Zahl_schreiben(Grafik_Seite, Ausrichtung.EinzeiligMitte, .Energieausweis_Daten.Wohngebaeude.Bedarfswerte_18599.Treibhausgasemissionen_Hoechstwert_Bestand.Wert, 2, "", 2622, 3025, 1124, 1226, Font_Schriftgroesse_50, Font_Druckfarbe)
+                                                'Image_Zahl_schreiben(Grafik_Seite, Ausrichtung.EinzeiligMitte, .Energieausweis_Daten.Wohngebaeude.Bedarfswerte_18599.Treibhausgasemissionen_Hoechstwert_Bestand.Wert, 2, "", 2622, 3025, 1124, 1226, Font_Schriftgroesse_50, Font_Druckfarbe)
                                                 '-------------------------------------------------------
                                                 Image_Zahl_schreiben(Grafik_Seite, Ausrichtung.EinzeiligMitte, .Energieausweis_Daten.Wohngebaeude.Bedarfswerte_18599.Primaerenergiebedarf_Hoechstwert_Bestand.Wert, 1, "", 1657, 1880, 2416, 2518, Font_Schriftgroesse_40, Font_Druckfarbe)
                                                 '-------------------------------------------------------
                                             Case 1 'Neubau
                                                 '-------------------------------------------------------
-                                                Image_Zahl_schreiben(Grafik_Seite, Ausrichtung.EinzeiligMitte, .Energieausweis_Daten.Wohngebaeude.Bedarfswerte_18599.Treibhausgasemissionen_Hoechstwert_Neubau.Wert, 2, "", 2622, 3025, 1124, 1226, Font_Schriftgroesse_50, Font_Druckfarbe)
+                                                'Image_Zahl_schreiben(Grafik_Seite, Ausrichtung.EinzeiligMitte, .Energieausweis_Daten.Wohngebaeude.Bedarfswerte_18599.Treibhausgasemissionen_Hoechstwert_Neubau.Wert, 2, "", 2622, 3025, 1124, 1226, Font_Schriftgroesse_50, Font_Druckfarbe)
                                                 '-------------------------------------------------------
                                                 Image_Zahl_schreiben(Grafik_Seite, Ausrichtung.EinzeiligMitte, .Energieausweis_Daten.Wohngebaeude.Bedarfswerte_18599.Primaerenergiebedarf_Hoechstwert_Neubau.Wert, 1, "", 1657, 1880, 2416, 2518, Font_Schriftgroesse_40, Font_Druckfarbe)
                                                 '-------------------------------------------------------
