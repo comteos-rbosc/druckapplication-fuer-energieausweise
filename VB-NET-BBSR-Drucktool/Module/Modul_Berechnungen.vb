@@ -96,7 +96,7 @@
                     '--------------------------------------------------
                     .Verbrauchserfassung(.Verbrauchserfassung_Anzahl).Energieverbrauch.Wert = .Leerstandszuschlag_Warmwasser.Leerstandszuschlag_kWh.Wert
                     '--------------------------------------------------
-                    .Verbrauchserfassung(.Verbrauchserfassung_Anzahl).Energieverbrauchsanteil_Warmwasser_zentral.Wert = .Leerstandszuschlag_Warmwasser.Leerstandszuschlag_kWh.Wert
+                    .Verbrauchserfassung(.Verbrauchserfassung_Anzahl).Energieverbrauchsanteil_Warmwasser_zentral.Wert = .Leerstandszuschlag_Warmwasser.Leerstandszuschlag_kWh.Wert (Fehler)
                     '--------------------------------------------------
                 End If
                 '--------------------------------------------------
@@ -292,7 +292,7 @@
                     '--------------------------------------------------
                     .Verbrauchserfassung(.Verbrauchserfassung_Anzahl).Energieverbrauch.Wert = .Leerstandszuschlag_thermisch_erzeugte_Kaelte.Leerstandszuschlag_kWh.Wert
                     '--------------------------------------------------
-                    .Verbrauchserfassung(.Verbrauchserfassung_Anzahl).Energieverbrauchsanteil_Warmwasser_zentral.Wert = .Leerstandszuschlag_thermisch_erzeugte_Kaelte.Leerstandszuschlag_kWh.Wert
+                    .Verbrauchserfassung(.Verbrauchserfassung_Anzahl).Energieverbrauchsanteil_thermisch_erzeugte_Kaelte.Wert = .Leerstandszuschlag_thermisch_erzeugte_Kaelte.Leerstandszuschlag_kWh.Wert
                     '--------------------------------------------------
                 End If
                 '--------------------------------------------------
@@ -312,7 +312,7 @@
                     '--------------------------------------------------
                     .Verbrauchserfassung(.Verbrauchserfassung_Anzahl).Energieverbrauch.Wert = .Leerstandszuschlag_Strom.Leerstandszuschlag_kWh.Wert
                     '--------------------------------------------------
-                    .Verbrauchserfassung(.Verbrauchserfassung_Anzahl).Energieverbrauchsanteil_Warmwasser_zentral.Wert = .Leerstandszuschlag_Strom.Leerstandszuschlag_kWh.Wert
+                    .Verbrauchserfassung(.Verbrauchserfassung_Anzahl).Energieverbrauch_Strom.Wert = .Leerstandszuschlag_Strom.Leerstandszuschlag_kWh.Wert
                     '--------------------------------------------------
                 End If
                 '--------------------------------------------------
